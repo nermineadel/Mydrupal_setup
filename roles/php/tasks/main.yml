@@ -1,0 +1,12 @@
+---
+
+- name: Install PHP and associated packages
+  apt: name=php5-fpm state=latest
+
+- name: Install PHP GD library
+  apt: name=php5-gd state=latest
+  notify:
+    - Restart Nginx
+
+- name: copy default php.ini file 
+  template: src=php.ini dest=/etc/php5/fpm/php.ini
