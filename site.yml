@@ -1,0 +1,18 @@
+---
+
+
+
+- hosts: drupal_hosts
+  remote_user: root
+
+
+
+  roles:
+    - swap
+    - update
+    - nginx
+    - php
+    - psql
+    - drupal
+
+  
